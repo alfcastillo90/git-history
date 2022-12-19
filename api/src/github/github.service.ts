@@ -7,15 +7,37 @@ export class GithubService {
   constructor(private readonly httpService: HttpService) {}
 
   async getUserInfo(username: string) {
+    console.log(process.env.GITHUB_API_URL);
     const request = this.httpService
-      .get(`${process.env.GITHUB_API_URL}users/${username}`, {
+      .get(`${process.env.GITHUB_API_URL}/users/${username}`, {
         headers: {
-          Authorization: process.env.GITHUB_ACCESS_TOKEN,
+          Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
         },
       })
       .pipe(map((response) => response.data))
       .pipe(
-        catchError(() => {
+        catchError((error) => {
+          console.log(error);
+          throw new ForbiddenException('API not available');
+        }),
+      );
+    return await lastValueFrom(request);
+  }
+
+  async getCommitsByUserAndRepo(username: string, repo: string) {
+    const request = this.httpService
+      .get(
+        `${process.env.GITHUB_API_URL}/repos/${username}/${repo}/commits?per_page=100`,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+          },
+        },
+      )
+      .pipe(map((response) => response.data))
+      .pipe(
+        catchError((error) => {
+          console.log(error);
           throw new ForbiddenException('API not available');
         }),
       );
