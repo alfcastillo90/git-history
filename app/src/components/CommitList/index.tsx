@@ -12,7 +12,6 @@ const tableHeaders = {
 };
 
 export const CommitList = () => {
-  const [value, setValue] = useState<string>("");
   const [commitsHistory, setCommitsHistory] = useState<ICommitHistory[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
