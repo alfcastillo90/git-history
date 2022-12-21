@@ -7,9 +7,9 @@ this repository includes two folders
 ## Environment Variables
 
 To run this project, you will need to modify the following environment variables to your .env file
+### You have to create your own github classic token it's imposible for me to share my tokens because github detects and revokes it inmidiately
+`GITHUB_ACCESS_TOKEN=`
 
-`GITHUB_ACCESS_TOKEN=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`
-important!: this token expires on
 
 ## Run Locally
 
