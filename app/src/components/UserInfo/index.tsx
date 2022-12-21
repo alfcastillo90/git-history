@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUserInfo } from "../../services/github.service";
 import { IUserInfo } from "../../types/user-info";
-import { PaperClipIcon } from '@heroicons/react/20/solid'
 const moment = require('moment');
 
 export const UserInfo = () => {
