@@ -1,4 +1,6 @@
+import React from "react";
 import { useEffect, useState } from "react";
+import { render } from "react-dom";
 import { getUserInfo } from "../../services/github.service";
 import { IUserInfo } from "../../types/user-info";
 const moment = require('moment');
@@ -12,10 +14,11 @@ export const UserInfo = () => {
       const userInfo = await getUserInfo(username);
       console.log(userInfo)
       setUser(userInfo);
+      return userInfo;
     };
 
    setUserInfo(username);
-  }, [])
+  }, []);
 
   return (
     <div className="overflow-hidden bg-white shadow sm:rounded-lg">
@@ -40,7 +43,7 @@ export const UserInfo = () => {
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Avatar url</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-              <img src={user?.avatar_url}></img>
+              <img src={user?.avatar_url} alt="img"/>
             </dd>
           </div>
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
