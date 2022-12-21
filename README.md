@@ -8,7 +8,7 @@ this repository includes two folders
 
 To run this project, you will need to modify the following environment variables to your .env file
 
-`GITHUB_ACCESS_TOKEN=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`
+`GITHUB_ACCESS_TOKEN=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`
 important!: this token expires on
 
 ## Run Locally
