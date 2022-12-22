@@ -5,8 +5,8 @@ this repository includes two folders
 
 ## Environment Variables
 
-To run this project, you will need to modify the following environment variables to your .env file
-### You have to create your own github classic token it's imposible for me to share my tokens because github detects and revokes it inmidiately
+To run this project, it's necessary modify the following environment variables to your .env file
+### You have to create your own github classic token. I'm not able to share my tokens because github detects and revokes it inmidiately
 `GITHUB_ACCESS_TOKEN=`
 
 
