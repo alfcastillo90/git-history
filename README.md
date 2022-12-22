@@ -1,4 +1,3 @@
-
 # Time force challenge
 
 this repository includes two folders
@@ -7,8 +6,9 @@ this repository includes two folders
 ## Environment Variables
 
 To run this project, you will need to modify the following environment variables to your .env file
+### You have to create your own github classic token it's imposible for me to share my tokens because github detects and revokes it inmidiately
+`GITHUB_ACCESS_TOKEN=`
 
-`GITHUB_ACCESS_TOKEN=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`
 
 ## Run Locally
 
